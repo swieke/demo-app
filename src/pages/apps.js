@@ -5,11 +5,9 @@ import { useSession } from "next-auth/react"
 import { useRouter } from 'next/navigation';
 
 export default function Apps() {
-
     const [appData, setData] = useState(null)
     const { data: session, status } = useSession()
     const router = useRouter();
-
 
     useEffect(() => {
         if (status === 'unauthenticated') {
@@ -26,10 +24,10 @@ export default function Apps() {
     }, []);
 
     if (appData && appData.resources) {
-        return <Grid.Container justify="center" css={{ paddingTop: "10vh", minHeight: "100vh", maxWidth: "90vw" }} >
+        return <Grid.Container  css={{  minHeight: "100vh" }} >
             {appData.resources.map((resource, index) => {
                 console.log(resource)
-                return <Grid xs={4} css={{ mh: 350, margin: 10 }}>
+                return <Grid xs={3} css={{padding: 30}}>
                     <AppCard resource={resource} index={index} />
                 </Grid>
             })}

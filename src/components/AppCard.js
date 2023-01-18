@@ -4,7 +4,7 @@ import { Card, Grid, Text, Row, Button } from "@nextui-org/react";
 export default function AppCard({ resource, index }) {
 
     return (
-        <Card css={{ mw: "300px", mh: "320px" }} key={index}>
+        <Card  key={index}>
             <Card.Header>
                 <Text size="$2xl" b>{resource['name']}</Text>
             </Card.Header>

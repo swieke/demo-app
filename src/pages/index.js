@@ -1,15 +1,10 @@
-import Head from 'next/head';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import {
-  signIn,
-  signOut,
   useSession
 } from 'next-auth/react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
-
   const { data: session, status } = useSession()
   const router = useRouter();
 
@@ -23,4 +18,3 @@ export default function Home() {
     }
   }, [session, status])
 }
-
